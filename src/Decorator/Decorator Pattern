@@ -1,0 +1,50 @@
+Open Closed Principle -
+
+Well, that is what I was getting at. By dynamically composing objects, I can
+add new functionality by writing new code rather than altering existing code. Because
+I’m not changing existing code, the chances of introducing bugs or causing unintended
+side effects in pre-existing code are much reduced.
+
+
+Design Problems which lead to the use of Decorator Pattern
+1) Class Explosion - Consider an example of Pizza with toppings or Beverages with Condiments.
+For example - if milk price changes, how many places we will need to update, if new toppings/ Condiments needs to be added, how many places it has to be changed
+Violation of Open closed principle,
+
+2) lets say you are using Boolean flag for each condiments and toppings and based on that you are calculating price
+--> what if new condiment / topping needs to be added - Violation of Open closed principle, existing code and cost method will need to be changed.
+
+Take below example -
+
+class Bevarage {
+    // some other methods
+    bool hasMilk();
+}
+
+class IcedTea extends bevarage {
+
+}
+
+The IcedTea will inherit hasMilk although it doesn't need that ( May be we can call it violation of Interface segregation Principle)
+
+Decorator Pattern
+-------------------------------------------------
+
+Decorators have the same supertype as the objects they decorate.
+You can use one or more decorators to wrap an object.
+Given that the decorator has the same supertype as the object it decorates,
+we can pass around a decorated object in place of the original (wrapped)
+object.
+The decorator adds its own behavior either before and/or after delegating
+to the object it decorates to do the rest of the job.
+
+Objects can be decorated at any time, so we can decorate objects
+dynamically at runtime with as many decorators as we like.
+
+we’re using inheritance
+to achieve the type matching, but we aren’t using inheritance to get behavior.
+
+if we rely on inheritance, then our behavior can only be determined
+statically at compile time. In other words, we get only whatever behavior the
+superclass gives us or that we override. With composition, we can mix and
+match decorators any way we like... at runtime.

@@ -1,0 +1,17 @@
+1. Why not use global variable ?
+
+Object will be created whether we need it or not, if it is resource intensive, and not used, it will waste resource.
+
+why the need of double locking?
+you can synchronize the method right?
+-- synchronize is expensive and it affects the performance of the application.
+Moreover we need synchronize only at the first time creation of the object.
+
+so we check if this is the first time we are creating an object ,
+
+if(uniqueInstance == NULL ) , if its the first time , then enter synchronized block.
+
+Can we subclass singleton class-
+No, we have private constructor , so we cannot.
+
+even if we make the constructor public, then the unique instance is static, wont get benifit out of subclassing.

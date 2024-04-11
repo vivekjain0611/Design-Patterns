@@ -1,0 +1,37 @@
+Object Creation logic to be separated and encapsulated - Single Responsibility Principle.
+
+Simple factory
+
+StaticFactory - you cant subclass and change the create Method-
+
+class SimpleFactory {
+    Object create(String type) {
+
+    }
+}
+
+
+Factory Pattern -
+
+Dependency inversion Principle..
+Depend upon abstractions. Do not depend upon concrete classes.
+It suggests that
+our high-level components should not depend on our low-level components;
+rather, they should both depend on abstractions
+
+//High level components have some behaviours that occurs on low level components.
+Example - PizzaStore ( a high level component ) have behaviours ( orderPizza, preparePizza ) on Pizza (low level components)
+
+
+Dependency inversion Principle -
+
+1) Variable should never have a reference to concrete implementation. Use factory method instead of new.
+(For the classes that are most likely to get change)
+
+2)No class should derive from a concrete class.-If you derive from a concrete class, you’re depending on a concrete class. Derive
+                                                from an abstraction, like an interface or an abstract class.
+
+3)No method should override an implemented method of any of its base
+  classes. If you override an implemented method, then your base class wasn’t really an
+           abstraction to start with. Those methods implemented in the base class are meant to
+           be shared by all your subclasses.

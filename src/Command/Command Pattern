@@ -1,0 +1,18 @@
+Separation of concerns
+
+The requester and the receiver of the command are totally decoupled.
+
+
+Null Object Pattern
+
+
+public interface Command {
+    void execute();
+}
+
+The above interface has only one abstract method. Therefore it is Functional Interface.
+Functional Interface can used to reference lambda expression.
+So in short - lambda expression can be used for commands;
+
+example -
+

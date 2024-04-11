@@ -1,0 +1,18 @@
+Identify the aspects that varies and encapsulate them.
+Always program to an interface rather than class.
+Favour composition over inheritance..( gives us the flexibility to change the behaviour at runtime)
+
+Strategy Design pattern -
+
+Defines a family of algorithm and encapsulates them and allow you to use them independently..
+
+Inheritence helps in compile time, but composition helps in changing the behaviour at runtime..
+
+Interface Segregation Principle..
+
+Inheritance vs Composition
+When we inherit behavior by subclassing, that behavior is set statically at
+compile time. In addition, all subclasses must inherit the same behavior. If however, we
+can extend an object’s behavior through composition, then we can do this dynamically at
+runtime.
+
